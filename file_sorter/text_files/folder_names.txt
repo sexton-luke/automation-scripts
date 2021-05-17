@@ -1,0 +1,3 @@
+# Remove all comments when finished
+# Please add specific folder names separated by commas (no spaces)
+# name one,name two,etc..

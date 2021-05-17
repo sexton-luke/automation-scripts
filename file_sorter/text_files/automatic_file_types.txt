@@ -1,0 +1,8 @@
+# Settings for automatic filing
+# Please set the dictionary as:
+# Key = file type
+# Value = folder name
+
+# For handling multiple file types, ensure value has the same folder name as value
+
+{"file type": "folder name"}
