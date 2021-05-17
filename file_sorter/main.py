@@ -4,7 +4,6 @@ Author: Luke Sexton
 GitHub: https://github.com/valentina-valentine
 
 File Sorter sorts file types based on chosen folder name under a root path.
-* Options to customize for inputting
 """
 
 # Import modules
