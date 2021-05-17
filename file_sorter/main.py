@@ -3,7 +3,7 @@ Title: File Sorter
 Author: Luke Sexton
 GitHub: https://github.com/valentina-valentine
 
-File Sorter sorts file types based on chosen folder name under a root path.
+File sorter sorts files based on user input of folder name within a specified root path.
 """
 
 # Import modules
@@ -38,15 +38,15 @@ def get_root_directory():
 
 if __name__ == '__main__':
     # Get root directory path
-    # root_directory = "enter path here.."
-    root_directory = get_root_directory()
+    # root_directory = "enter path here.." # Uncomment and enter specific root path
+    root_directory = get_root_directory()  # Comment out if using specific root path
     print("Root directory ->", root_directory)
 
     try:
         if directory_exists(root_directory):
             # Initialize Settings with mode and root directory
             print("Initializing Settings class with mode ->", MODES['auto'])
-            settings = Settings(MODES['auto'], root_directory)
+            settings = Settings(MODES['auto'], root_directory)  # Change mode here
 
             automatic_file_types = settings.get_automatic_file_types()
             directory_dictionary = settings.get_directory_paths()
