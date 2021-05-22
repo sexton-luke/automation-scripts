@@ -2,10 +2,8 @@
 
 File sorter sorts files based on user input of folder name within a specified root path.
 
-## Setup automatic file types and folder names
-🔥🔥🔥 <ins>**IMPORTANT**</ins> 🔥🔥🔥
-
-- [x] AUTO mode (default)
+## [IMPORTANT] - Setup automatic file types and folder names
+- [x] Default mode: AUTO
 - [ ] Please ensure you open and configure the following files:
 ```
 text_files/automatic_file_types.txt
