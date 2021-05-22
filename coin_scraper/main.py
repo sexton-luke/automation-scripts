@@ -2,10 +2,16 @@
 Title: Coin Scraper
 Author: Luke Sexton
 GitHub:https://github.com/valentina-valentine
+
+CoinMarketCap Developers: https://pro.coinmarketcap.com/
 CoinMarketCap API: https://coinmarketcap.com/api/
+CoinMarketCap Best practices: https://coinmarketcap.com/api/documentation/v1/#section/Best-Practices
+
+Telegram Bot API: https://core.telegram.org/bots
 
 Description: Coin Scraper utilizes the Coin Market Cap API to retrieve the costs of specified cryptocurrencies
-periodically and notifies the user when the price has changed by a specified percentage. """
+periodically and notifies the user when the price has changed by a specified percentage.
+"""
 # Imports
 import atexit
 import decimal
