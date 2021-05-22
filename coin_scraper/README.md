@@ -9,4 +9,4 @@ Please follow TODO steps in config.py to setup script properly. Accounts will ne
 - CoinMarketCap Developers: https://pro.coinmarketcap.com/ - Free developer account needed for personal API key.
 - CoinMarketCap API: https://coinmarketcap.com/api/
 - CoinMarketCap Best practices: https://coinmarketcap.com/api/documentation/v1/#section/Best-Practices
-- Telegram Bot API: https://core.telegram.org/bots - Free account needed for channel and bot ids/links
+- Telegram Bot API: https://core.telegram.org/bots - Free account needed for channel and bot ids/links.
