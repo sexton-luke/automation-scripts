@@ -15,7 +15,7 @@ Description: Use this script to get IDs of cryptocurrencies to follow best pract
 import requests
 from prettytable import PrettyTable
 
-from config_ignore import id_map_url, find_coin_ids_parameters, headers
+from config import id_map_url, find_coin_ids_parameters, headers
 
 # Initialize symbols list from config file
 symbols = [symbol for symbol in find_coin_ids_parameters['symbol'].split(',')]
