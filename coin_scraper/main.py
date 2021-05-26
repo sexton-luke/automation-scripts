@@ -22,7 +22,7 @@ import time
 import requests
 from prettytable import PrettyTable
 
-from config import coin_ids, currency_precisions, headers, message_types, parameters, percentage_threshold, \
+from config_ignore import coin_ids, currency_precisions, headers, message_types, parameters, percentage_threshold, \
     quotes_latest_url, sleep_time, telegram_bot_id, telegram_channel_id, telegram_url, titles
 
 
@@ -135,11 +135,16 @@ def log_title(title):
     print("")
 
 
-def notify_script_stopped():
-    """Notify groups that script has stopped"""
+def notify_script_start():
+    """Notify script start to Telegram group"""
+    message = "Coin Scraper script has started!"
+    post_telegram_request(message)
+
+
+def notify_script_stop():
+    """Notify script stop to Telegram group"""
     message = "Coin Scraper script has stopped!"
-    telegram_parameters = {'chat_id': telegram_channel_id, 'text': message}
-    post_telegram_request(telegram_parameters)
+    post_telegram_request(message)
 
 
 def notify_telegram(changes):
@@ -153,12 +158,12 @@ def notify_telegram(changes):
         currency = to_currency(decimal_price)
 
         message = "{0} New Price: {1} - {2} by {3}%".format(row[0].upper(), currency, row[2], row[3])
-        telegram_parameters = {'chat_id': telegram_channel_id, 'text': message}
-        post_telegram_request(telegram_parameters)
+        post_telegram_request(message)
 
 
-def post_telegram_request(post_parameters):
+def post_telegram_request(message):
     """Post request to Telegram channel"""
+    post_parameters = {'chat_id': telegram_channel_id, 'text': message}
     try:
         requests.post(telegram_url + telegram_bot_id + "/" + 'sendMessage?', data=post_parameters)
     except requests.exceptions.RequestException:
@@ -227,12 +232,13 @@ def update_existing_coin_dictionary(existing_coins, changes):
 MAX_TITLE_LENGTH = get_max_value_string_length(titles)  # For title formatting purposes
 if __name__ == '__main__':
     log_title(titles['start'])
-    # Initialize Logger for Telegram
+    # Initialize logger and notify Telegram script has started
     initialize_telegram_logger()
+    notify_script_start()
     # Initialize empty dictionary when script first runs
     existing_coin_dictionary = {}
     # Set handler to notify Telegram that script has stopped
-    atexit.register(notify_script_stopped())
+    atexit.register(notify_script_stop)
     # Start console logging
     log_title(titles['dictionary_existing'])
     log_dictionary(existing_coin_dictionary)
@@ -266,6 +272,6 @@ if __name__ == '__main__':
             sleep_and_log(sleep_time)
         except KeyboardInterrupt:
             log_title(titles['stop'])
-            notify_script_stopped()
+            notify_script_stop()
             print(">>> Script stopping... Goodbye...")
             sys.exit()
