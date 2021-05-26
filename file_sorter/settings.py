@@ -48,8 +48,8 @@ def read_file_contents(file_name):
     return contents
 
 
-AUTOMATIC_FILE_TYPES_FILE = 'text_files/automatic_file_types_ignore.txt'
-FOLDER_NAMES_FILE = 'text_files/folder_names_ignore.txt'
+AUTOMATIC_FILE_TYPES_FILE = 'text_files/automatic_file_types.txt'
+FOLDER_NAMES_FILE = 'text_files/folder_names.txt'
 SHORTCUTS_FILE_NAME = 'shortcuts.txt'
 MODES = {'auto': 'AUTO', 'manual': 'MANUAL'}
 
