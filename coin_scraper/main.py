@@ -22,7 +22,7 @@ import time
 import requests
 from prettytable import PrettyTable
 
-from config_ignore import coin_ids, currency_precisions, headers, message_types, parameters, percentage_threshold, \
+from config import coin_ids, currency_precisions, headers, message_types, parameters, percentage_threshold, \
     quotes_latest_url, sleep_time, telegram_bot_id, telegram_channel_id, telegram_url, titles
 
 
